@@ -13,8 +13,9 @@
 title: YouTube News a Datastory
 
 # Your name to show in the footer
-author: Leonie Gasser
-author: Lisa Schneider
+author: 
+- Leonie Gasser 
+- Lisa Schneider
 
 ###############################################
 # --- List of links in the navigation bar --- #
