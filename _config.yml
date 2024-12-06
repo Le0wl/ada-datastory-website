@@ -14,8 +14,8 @@ title: YouTube News a Datastory
 
 # Your name to show in the footer
 author: 
-- Leonie Gasser 
-- Lisa Schneider
+  - Leonie Gasser 
+  - Lisa Schneider
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -138,7 +138,7 @@ navbar-var-length: false
 
 page-col: "#FFFFFF"
 text-col: "#404040"
-link-col: "#008AFF"
+link-col: "#ff0a0a"
 hover-col: "#0085A1"
 navbar-col: "#EAEAEA"
 navbar-text-col: "#404040"
@@ -146,7 +146,7 @@ navbar-border-col: "#DDDDDD"
 footer-col: "#EAEAEA"
 footer-text-col: "#777777"
 footer-link-col: "#404040"
-footer-hover-col: "#0085A1"
+footer-hover-col: "#ff0a0a"
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
