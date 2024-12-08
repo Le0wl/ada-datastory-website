@@ -47,9 +47,9 @@ author:
 navbar-links:
   Test: "test"
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
+  Sources:
+    - ADA | CS-401: "https://epfl-ada.github.io/teaching/fall2024/cs401/"
+    - YouNiverse dataset: "https://github.com/epfl-dlab/YouNiverse"
   #Author's home: "https://deanattali.com"
 
 ################
