@@ -1,7 +1,7 @@
 <footer>
-  <div class="container-md beautiful-jekyll-footer">
+  <div class="container-fluid beautiful-jekyll-footer">
     <div class="row">
-      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <div class="col-xl-10 offset-xl-1 col-lg-12">
       {% include social-networks-links.html %}
       
       {% if page.footer-extra %}
@@ -12,37 +12,41 @@
         </div>
       {% endif %}
 
-      {% if site.authors %}
+      {% if site.author %}
       <div class="authors-section">
-        <h5>Our Authors</h5>
-        <ul class="author-list">
-          {% for author in site.authors %}
-            <li class="author-item">
-              <p><strong>{{ author.name }}</strong></p>
-              {% if author.email %}
-                <p>Email: <a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
-              {% endif %}
-              {% if author.description %}
-                <p>Description: {{ author.description }}</p>
-              {% endif %}
-            </li>
+        <h5>Team lil0MohammADAli:</h5>
+        <div class="row justify-content-center g-4">
+          {% for author in site.author %}
+            <div class="col text-center"> 
+              <div class="author-item">
+                <p><strong>{{ author.name }}</strong></p>
+                {% if author.sciper %}
+                  <p>{{ author.sciper }}</p>
+                {% endif %}
+                {% if author.email %}
+                  <p><a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
+                {% endif %}
+                {% if author.section %}
+                  <p>{{ author.section }}</p>
+                {% endif %}
+                {% if author.description %}
+                  <p>{{ author.description }}</p>
+                {% endif %}
+              </div>
+            </div>
           {% endfor %}
-        </ul>
+        </div>
         <hr>
       </div>
       {% endif %}
       
       <p class="copyright text-muted">
-      {% if site.author %}
-        {{ site.author }}
-        &nbsp;&bull;&nbsp;
-      {% endif %}
       {{ site.time | date: '%Y' }}
 
       {% if site.url-pretty %}
         &nbsp;&bull;&nbsp;
         <span class="author-site">
-          <a href="{% if site.url-canonical %}{{ site.url-canonical }}{% else %}{{ '/' | absolute_url }}{% endif %}">{{ site.url-pretty }}</a>
+          <a href="https://github.com/epfl-ada/ada-2024-project-lil0mohammadali">{{ site.url-pretty }}</a>
         </span>
       {% endif %}
 

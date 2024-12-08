@@ -33,10 +33,14 @@
             {% endif %}
           {% endif %}
           
-          {% if include.type == "post" %} 
+          {% if include.type == "post" %}
+            <!--
             {% if page.author %}
-              By <strong>{{ page.author | strip_html }}</strong><br>
+              {% for author in site.author %}
+                By <strong>{{ author.name | strip_html }}</strong><br>
+              {% endfor %}
             {% endif%}
+            -->
             <span class="post-meta">Posted on {{ page.date | date: date_format }}</span>
             {% if page.last-updated %}
               <span class="post-meta">
