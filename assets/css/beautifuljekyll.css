@@ -407,7 +407,7 @@ img {
 /* --- Footer --- */
 
 footer {
-  padding: 1.875rem 0;
+  padding: 1.875rem 1rem;
   border-top: 1px var(--footer-col) solid;
   margin-top: 3.125rem;
   font-size: 0.875rem;
@@ -425,7 +425,7 @@ footer {
   margin-bottom: 0;
 }
 .author-details p {
-  margin: 0;
+  margin: 1rem;
 }
 
 footer p.text-muted {
@@ -1036,7 +1036,7 @@ pre {
   display: none;
   z-index: 999999;
   position: fixed;
-  background: rgba(0,0,0,0.9);
+  background: rgba(70,70,70,0.7);
   left: 0;
   right: 0;
   top: 0;
