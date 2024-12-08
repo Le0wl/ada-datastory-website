@@ -17,7 +17,7 @@
         <h5>Our Authors</h5>
         <div class="row">
           {% for author in site.author %}
-            <div class="col-md-4"> 
+            <div class="col-md-4 mb-4 text-center"> 
               <div class="author-item">
                 <p><strong>{{ author.name }}</strong></p>
                 {% if author.email %}
@@ -35,10 +35,6 @@
       {% endif %}
       
       <p class="copyright text-muted">
-      {% if site.author %}
-        {{ site.author }}
-        &nbsp;&bull;&nbsp;
-      {% endif %}
       {{ site.time | date: '%Y' }}
 
       {% if site.url-pretty %}
