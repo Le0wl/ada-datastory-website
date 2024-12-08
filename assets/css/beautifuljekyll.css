@@ -419,10 +419,10 @@ footer {
 }
 
 .authors-section {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .author-details {
-  margin-bottom: 15px;
+  margin-bottom: 0;
 }
 .author-details p {
   margin: 0;
