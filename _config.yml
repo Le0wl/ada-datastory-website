@@ -35,6 +35,7 @@ author:
 ###############################################
 
 navbar-links:
+  Test: "test"
   About Me: "aboutme"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
