@@ -1,9 +1,9 @@
 ---
 layout: page
-cover-img: /assets/img/Header.png
+cover-img: /assets/img/breaking.png
 ---
 
-This is the me tring to make a new page. 
+The old notebook minus the plots
 ## Table of Contents
 * [1 Preprocessing and data filtering](#filter_data)
     * [1.1 Filter for Category 'News & Politics'](#filter_data-category)
