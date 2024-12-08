@@ -419,13 +419,14 @@ footer {
 }
 
 .authors-section {
-  margin-top: 0;
+  display: flex;
+  flex-wrap: wrap;          
+  gap: 2rem;                
 }
-.author-details {
-  margin-bottom: 0;
-}
-.author-details p {
-  margin: 1rem;
+
+.author-item {
+  margin-bottom: 0.5rem;    
+  flex: 1 1 20%;             
 }
 
 footer p.text-muted {
