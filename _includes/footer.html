@@ -13,21 +13,20 @@
       {% if site.authors %}
       <div class="authors-section">
         <h5>Our Authors</h5>
-        {% for author in site.authors %}
-          <div class="author-details">
-            <p><strong>{{ author.name }}</strong></p>
-            {% if author.email %}
-              <p>Email: <a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
-            {% endif %}
-            {% if author.description %}
-              <p>{{ author.description }}</p>
-            {% endif %}
-            {% if author.website %}
-              <p>Website: <a href="{{ author.website }}" target="_blank">{{ author.website }}</a></p>
-            {% endif %}
-          </div>
-          <hr>
-        {% endfor %}
+        <ul class="author-list">
+          {% for author in site.authors %}
+            <li class="author-item">
+              <p><strong>{{ author.name }}</strong></p>
+              {% if author.email %}
+                <p>Email: <a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
+              {% endif %}
+              {% if author.description %}
+                <p>Description: {{ author.description }}</p>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+        <hr>
       </div>
     {% endif %}
       <p class="copyright text-muted">
