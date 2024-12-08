@@ -15,19 +15,21 @@
       {% if site.authors %}
       <div class="authors-section">
         <h5>Our Authors</h5>
-        <ul class="author-list">
+        <div class="row">
           {% for author in site.authors %}
-            <li class="author-item">
-              <p><strong>{{ author.name }}</strong></p>
-              {% if author.email %}
-                <p>Email: <a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
-              {% endif %}
-              {% if author.description %}
-                <p>Description: {{ author.description }}</p>
-              {% endif %}
-            </li>
+            <div class="col-md-4"> 
+              <div class="author-item">
+                <p><strong>{{ author.name }}</strong></p>
+                {% if author.email %}
+                  <p>Email: <a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
+                {% endif %}
+                {% if author.description %}
+                  <p>Description: {{ author.description }}</p>
+                {% endif %}
+              </div>
+            </div>
           {% endfor %}
-        </ul>
+        </div>
         <hr>
       </div>
       {% endif %}
