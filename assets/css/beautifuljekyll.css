@@ -418,6 +418,16 @@ footer {
   {% endif %}
 }
 
+.authors-section {
+  margin-top: 20px;
+}
+.author-details {
+  margin-bottom: 15px;
+}
+.author-details p {
+  margin: 0;
+}
+
 footer p.text-muted {
   color: var(--footer-text-col) !important;
 }
