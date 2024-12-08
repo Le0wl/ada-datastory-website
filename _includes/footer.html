@@ -10,6 +10,26 @@
           {% endfor %}
         </div>
       {% endif %}
+      {% if site.authors %}
+      <div class="authors-section">
+        <h5>Our Authors</h5>
+        {% for author in site.authors %}
+          <div class="author-details">
+            <p><strong>{{ author.name }}</strong></p>
+            {% if author.email %}
+              <p>Email: <a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
+            {% endif %}
+            {% if author.description %}
+              <p>{{ author.description }}</p>
+            {% endif %}
+            {% if author.website %}
+              <p>Website: <a href="{{ author.website }}" target="_blank">{{ author.website }}</a></p>
+            {% endif %}
+          </div>
+          <hr>
+        {% endfor %}
+      </div>
+    {% endif %}
       <p class="copyright text-muted">
       {% if site.author %}
         {{ site.author }}

@@ -14,8 +14,21 @@ title: YouTube News a Datastory
 
 # Your name to show in the footer
 author: 
-  - Leonie Gasser 
-  - Lisa Schneider
+  - name: "Leonie Gasser"
+    email: "leonie.gasser@epfl.ch"
+    description: "315151 Robotics"
+  - name: "Lisa Schneider"
+    email: "lisa.schneider@epfl.ch"
+    description: "327799 Robotics"
+  - name: "Jeffrey Yu"
+    email: "jeffrey.yu@epfl.ch"
+    description: "371327 Robotics"
+  - name: "Samuel Waridel"
+    email: "samuel.waridel@epfl.ch"
+    description: "330169 Life Sciences"
+  - name: "Jad Bhamdouni"
+    email: "jad.bhamdouni@epfl.ch "
+    description: "370746 Robotics"
 
 ###############################################
 # --- List of links in the navigation bar --- #
