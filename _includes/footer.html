@@ -21,10 +21,10 @@
               <div class="author-item">
                 <p><strong>{{ author.name }}</strong></p>
                 {% if author.email %}
-                  <p>Email: <a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
+                  <p><a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
                 {% endif %}
                 {% if author.description %}
-                  <p>Description: {{ author.description }}</p>
+                  <p>{{ author.description }}</p>
                 {% endif %}
               </div>
             </div>
