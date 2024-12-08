@@ -16,7 +16,7 @@ title: YouTube News a Datastory
 author: 
   - name: " "
     sciper: " "
-    email: "              "
+    email: "                   "
     section: " "
     description: " "
   - name: "Leonie Gasser"
@@ -69,7 +69,7 @@ round-avatar: true
 
 # If you want to have an image logo in the top-left corner instead of having the title of the website,
 # then specify the following parameter
-title-img: "/asset/img/header.png"
+title-img: "/asset/img/breaking.png"
 
 
 #####################################
