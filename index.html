@@ -3,6 +3,11 @@ layout: page
 title: The Spread of News During Crisis
 subtitle: This is where we babbel about data
 ---
+
+{% capture datastory_content %}
+{% include_relative datastory.md %}
+{% endcapture %}
+
 <div>
-  {{ "{% include_relative datastory.md %}" | markdownify }}
+  {{ datastory_content | markdownify }}
 </div>
