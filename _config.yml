@@ -50,7 +50,8 @@ author:
 ###############################################
 
 navbar-links:
-  Test: "test"
+  old Notebook: "test"
+  old Readme: "oldReadMe"
   Sources:
     - ADA | CS-401: "https://epfl-ada.github.io/teaching/fall2024/cs401/"
     - YouNiverse dataset: "https://github.com/epfl-dlab/YouNiverse"
