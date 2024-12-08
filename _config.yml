@@ -46,7 +46,6 @@ author:
 
 navbar-links:
   Test: "test"
-  About Me: "aboutme"
   Sources:
     - ADA | CS-401: "https://epfl-ada.github.io/teaching/fall2024/cs401/"
     - YouNiverse dataset: "https://github.com/epfl-dlab/YouNiverse"
