@@ -17,11 +17,17 @@
         <h5>Our Authors</h5>
         <div class="row">
           {% for author in site.author %}
-            <div class="col-md-4 mb-4 text-center"> 
+            <div class="col-md-4 mb-2 text-center"> 
               <div class="author-item">
                 <p><strong>{{ author.name }}</strong></p>
+                {% if author.sciper %}
+                  <p>{{ author.sciper }}</p>
+                {% endif %}
                 {% if author.email %}
                   <p><a href="mailto:{{ author.email }}">{{ author.email }}</a></p>
+                {% endif %}
+                {% if author.section %}
+                  <p>{{ author.section }}</p>
                 {% endif %}
                 {% if author.description %}
                   <p>{{ author.description }}</p>
