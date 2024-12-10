@@ -82,7 +82,7 @@ In this section we want to show the distributions of all available video metrics
 ### 2.3 Results and Comparison between Events <a class="anchor" id="status_quo-results"></a>
 Getting correlation between the video features and plotting them.
 
-![correlation matirx of features](assets\plots\features_corr.png)
+![correlation matirx of features](https://le0wl.github.io/beautiful-jekyll-ada/assets/plots/features_corr.png)
 
 ## 3 How does the public response to events <a class="anchor" id="public_response"></a>
 
