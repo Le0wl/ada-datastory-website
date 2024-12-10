@@ -33,7 +33,7 @@ As we only want to focus on channels providing News Updates, we will compute the
 
 #### Test activity filter
 Here we plot the distribution of the average number of videos uploaded over two weeks for all channels. 
-![activity plot](assets\plots\channel_activity.png)
+![activity plot](https://le0wl.github.io/beautiful-jekyll-ada/assets/plots/channel_activity.png)
 **Conclusion**: We cannot identify clusters of active and non-active channels. That's why we set the cutoff threshold manually choosing a reasonable activity as threshold as 4 videos per day. This was verified manually by checking channels above the threshold. They mainly correspond to the type of news channels we were looking for.
 #### Filter channels by activity
 
@@ -61,20 +61,20 @@ We want to filter out the comments related the videos in the df_final_yt_metadat
 ## 2 How US News report on different events <a class="anchor" id="status_quo"></a>
 
 ### 2.1 Get relevant videos per event <a class="anchor" id="status_quo-videos_per_event"></a>
-![plot of uploads per event](assets\plots\uploads_per_topic.png)
+![plot of uploads per event](https://le0wl.github.io/beautiful-jekyll-ada/assets/plots/uploads_per_topic.png)
 ### 2.2 Extract video and channel features<a class="anchor" id="status_quo-features"></a>
-![plot views](assets\plots\views.png)
-![plot likes](assets\plots\likes.png)
-![plot dislikes](assets\plots\dislikes.png)
-![plot video length](assets\plots\duration.png)
+![plot views](https://le0wl.github.io/beautiful-jekyll-ada/assets/plots/views.png)
+![plot likes](https://le0wl.github.io/beautiful-jekyll-ada/assets/plots/likes.png)
+![plot dislikes](https://le0wl.github.io/beautiful-jekyll-ada/assets/plots/dislikes.png)
+![plot video length](https://le0wl.github.io/beautiful-jekyll-ada/assets/plots/duration.png)
 
-![plot title word count](assets\plots\tiltle_words.png)
-![plot most popular tilte words](assets\plots\title.png)
+![plot title word count](https://le0wl.github.io/beautiful-jekyll-ada/assets/plots/tiltle_words.png)
+![plot most popular tilte words](https://le0wl.github.io/beautiful-jekyll-ada/assets/plots/title.png)
 
-![plot discription word count](assets\plots\description_words.png)
-![plot most popular discription words](assets\plots\description.png)
+![plot discription word count](https://le0wl.github.io/beautiful-jekyll-ada/assets/plots/description_words.png)
+![plot most popular discription words](https://le0wl.github.io/beautiful-jekyll-ada/assets/plots/description.png)
 
-![plot most popular tags words](assets\plots\videotags.png)
+![plot most popular tags words](https://le0wl.github.io/beautiful-jekyll-ada/assets/plots/videotags.png)
 
 #### 2.2.1 Initial distributions of video metrics <a class="anchor" id="status_quo-features-distributions"></a>
 In this section we want to show the distributions of all available video metrics. These metrics will later be used to catergorize the videos and the user resopnse to them. The plots here below are show the overall distribution over the whole filtered dataset, they build the baseline we can compare the response to specific events against.
