@@ -1,15 +1,15 @@
 
-# Introduction
-Explain what we are doing and why
+## Introduction
+Why we care about our topic, make a teaser invoking the readers interest in the topic. Give an outline of the questions we will answer.
 
-# Research Questions:
+## Analysis and Findings
 
-- How does the reporting of events by US news channels change with respect to the type of event as well as its location?
+### At what data we are looking at
 
-- How is the public's response to an event affected by its nature, location, and video format through which it is presented?
+Explain how we selected our video of interest, flex with numbers. 
 
-- How does one make an effective news video to ellicit specific reactions and levels of interaction from the public?
+Plot with news channels activity and our cutoff point. (make it interactive (clicking on column shows you related channels)).
 
-# Datastroy
+Below you can see such a plot obtained by plotly in html format. 
 
-Hello 
+<iframe src="assets/plots/channels_activity_histogram.html" width="800" height="600"></iframe>
