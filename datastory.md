@@ -12,4 +12,8 @@ Plot with news channels activity and our cutoff point. (make it interactive (cli
 
 Below you can see such a plot obtained by plotly in html format. 
 
+{% include channels_activity_histogram.html %}
+
+{% include assets/channels_activity_histogram.html %}
+
 <iframe src="assets/plots/channels_activity_histogram.html" width="800" height="600"></iframe>
