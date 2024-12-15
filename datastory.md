@@ -17,3 +17,5 @@ Plot with news channels activity and our cutoff point. (make it interactive (cli
 Below you can see such a plot obtained by plotly in html format. 
 
 <iframe src="assets/plots/channels_activity_histogram.html" width="800" height="600"></iframe>
+
+<iframe src="https://github.com/Le0wl/ada-datastory-website/assets/plots/videos_by_cat.html" width="600" height="600"></iframe>
