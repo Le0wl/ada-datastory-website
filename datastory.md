@@ -20,9 +20,9 @@ Testing different plotly plots (plot included in _includes folder)
 
 {% include channels_activity_histogram.html %}
 
-plot with iframe:
+plot with iframe without borders:
 
-<iframe src="assets/plots/channels_activity_histogram.html" width="800" height="600"></iframe>
+<iframe src="assets/plots/channels_activity_histogram.html" width="800" height="600" style="border:none;"></iframe>
 
 
 
