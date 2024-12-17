@@ -1,8 +1,8 @@
 
 ## Introduction
-Journalism is often seen as the 4ht pillar of democracy. It serves as a watchdog for the government, and informs the public about events happening around the world. 100 years ago journalism took mainly place in newspapers, it has mostly moved to the digital world by now. While this shift has made news accesible for a wider public, it also gave rise to fake news and disinformation. In this datastory we want to study youtube as a news source with the data provided by the [Youniverse](https://github.com/epfl-dlab/YouNiverse) Dataset. More specifically we want to have a look at the reporting of US news channels during geopolitical events and natural disasters. 
+Journalism is often seen as the 4ht pillar of democracy. It serves as a watchdog for the government, and keeping the public informed about events happening around the world. A century ago ago journalism took mainly place in newspapers, but today it has mostly migrated to the digital world. While this shift has made news more accesible than ever, it also opened the door to the spread of fake news and misinformation. In this datastory we want to dive into YouTube as a news source, analyzing how US new channels report on major geopolitical events and natural disaster using data provided by the [Youniverse](https://github.com/epfl-dlab/YouNiverse) dataset. disasters. 
 
-But why youtube? Youtube is the largest video-sharing platform and the [second most](https://en.wikipedia.org/wiki/List_of_most-visited_websites) often visited website in the world. Everyday over **5 billion** hours of video content is [uploaded](https://www.madpenguin.org/how-many-youtube-videos-are-uploaded-every-day/). But is it relevant to news? Yes! `News & Politics` is the biggest category on youtube, meaning that most of the videos on youtube are about news or politics. These videos are watched by millions of people everyday. As of 2020, [26%](https://www.pewresearch.org/journalism/2020/09/28/many-americans-get-news-on-youtube-where-news-organizations-and-independent-producers-thrive-side-by-side/) of US adults indicated that they get their news from youtube. So as you can see it is interesting to study youtube as a news source.
+But why focus on YouTube? As the world's larget video-sharing platform and the [second most](https://en.wikipedia.org/wiki/List_of_most-visited_websites) often visited website in the world, YouTube is a major player in daily content with more than **5 billion** hours of video content [uploaded](https://www.madpenguin.org/how-many-youtube-videos-are-uploaded-every-day/) everyday. But is all this content even relevant to news? Absoluetly! `News & Politics` is the biggest category on youtube, meaning that most of the videos on youtube are about news or politics. These videos are watched by millions of people everyday. In fact, a 2020 study found that [26%](https://www.pewresearch.org/journalism/2020/09/28/many-americans-get-news-on-youtube-where-news-organizations-and-independent-producers-thrive-side-by-side/) of US adults get their news from YouTube. With this mind studying YouTube as a news source, how channels report on about specific events and how the public engages with its content, offers valuable insights into how modern media affects the spread of news. The findings could help governments, NGOs, and media outlets optimize their use of YouTube during emergencies to maximize outreach and public response.
 
 <iframe src="assets/plots/videos_by_cat.html" width="800" height="600" style="border:none;"></iframe>
 
@@ -11,11 +11,10 @@ But why youtube? Youtube is the largest video-sharing platform and the [second m
 
 ### At what data we are looking at
 
-Explain how we selected our video of interest, flex with numbers. 
-
-Plot with news channels activity and our cutoff point. (make it interactive (clicking on column shows you related channels)).
-
-Below you can see such a plot obtained by plotly in html format. 
+The Youniverse dataset contains information about ~**73 million** of videos from more than **137'000** different channels. In addition there is metadata for over **8.6 billion** of comments. To get the videos we are interested in, we will filter the dataset in three steps.
+1. We filter the dataset for videos that are tagged with the category `News & Politics`.
+2. We further filter for relevant channels by only considering channels that have a high activity. The reasoning behind this idea is that we want to look into news _updates_ and thus channels posting less than 4 videos per day are not interesting for us.
+3. Then we get the relevant videos for our analysis by filtering for specific keywords related to each individual event.
 
 Testing different plotly plots (plot included in _includes folder)
 
@@ -25,5 +24,41 @@ plot with iframe without borders:
 
 <iframe src="assets/plots/channels_activity_histogram.html" width="800" height="400" style="border:none;"></iframe>
 
+By scrolling through the list of channels you might have noticed two things. First, the majority of the channels sound like legit news channels (yayy!), but secondly there are some channels which do not seem to be english speaking. This happens even though the Youniverse dataset is supposed to only contain english speaking channels. To fix this problem we used the [chatGPT-4o mini](https://openai.com/api/) to detect the language of a small sample of videos and filtered out all non-english channels. Further we used the [Youtube API](https://developers.google.com/youtube/v3/docs/channels/list) to get the country of the channel. We then only kept the channels that are from the US to get more comparable results.
+After all this filter process we end up with _149_ channels, _2.5 million_ videos and _xxx million_ of comments.
 
+<span style="color: red;">Explanation on how we selected the events. Explain breakdowns of different events and on which ones we are focusing. </span>
+
+
+<span style="color: red;">Plots about the events and a first dumb analysis. Interactive plot with times series (upload) of each events, way to visualize keywords</span>
+
+### Characteristics of videos
+<span style="color: red;">
+Explain what characterizes a video, i.e. the variables the news channel can influence:
+
+- video duration
+- type of video (live footage/analysis)
+- capitalization of title
+- appearance of specific keywords (breaking news…)
+- frequency of video uploads concerning the event at time of upload
+- Subjectivity score</span>
+
+<span style="color: red;">Plot with statistics about each of those metrics where you can choose whether you want to group by region or event (or both?).</span>
+
+<span style="color: red;">Pick metrics which show a difference in either region or event category for a specific metric and provide t-test of the difference. Draw some conclusion about your analysis.</span>
+
+### Public engagement
+<span style="color: red;">What we understand by public response. Why does it matter? (News spread, fake news, etc.)
+
+Introduce our metrics for measuring the public response:
+
+- views
+- number of comments
+- number of replies to comments
+- ratio of like/dislike
+</span>
+
+<span style="color: red;">Plot with statistics about each of those metrics where you can choose whether you want to group by region or event (or both?).</span>
+
+<span style="color: red;">Again perform t-test for metrics which do show a difference and draw conclusion</span>
 
