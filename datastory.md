@@ -38,7 +38,7 @@ plot with iframe without borders:
 <iframe src="assets/plots/channels_activity_histogram.html" width="100%" height="400" style="border:none;"></iframe>
 
 
-<iframe src="assets/plots/channel_filtering_steps.html" width="60%" style="border:none;"></iframe>
+<iframe src="assets/plots/channel_filtering_steps.html" width="60%" height="400" style="border:none;"></iframe>
 
 <span style="color: red;">Explanation on how we selected the events. Explain breakdowns of different events and on which ones we are focusing. </span>
 
