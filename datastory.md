@@ -11,10 +11,23 @@ But why focus on YouTube? As the world's larget video-sharing platform and the [
 
 ### At what data we are looking at
 
-The Youniverse dataset contains information about ~**73 million** of videos from more than **137'000** different channels. In addition there is metadata for over **8.6 billion** of comments. To get the videos we are interested in, we will filter the dataset in three steps.
+The Youniverse dataset contains information about ~**73 million** of videos from more than **137'000** different channels. In addition there is metadata for over **8.6 billion** of comments. To get the videos we are interested in, we will filter the dataset in four steps.
 1. We filter the dataset for videos that are tagged with the category `News & Politics`.
 2. We further filter for relevant channels by only considering channels that have a high activity. The reasoning behind this idea is that we want to look into news _updates_ and thus channels posting less than 4 videos per day are not interesting for us.
-3. Then we get the relevant videos for our analysis by filtering for specific keywords related to each individual event.
+
+By scrolling through the list of channels you might have noticed two things. First, the majority of the channels sound like legit news channels, but secondly there are some channels which do not seem to be English speaking. Even though the Youniverse dataset is supposed to only contain English speaking channels, especially Hindi and Arabic speaking channels were still present.
+
+3. We filter for English-speaking US-based channles.
+
+To fix this problem we used the [chatGPT-4o mini](https://openai.com/api/) to detect the language of a small sample of videos and filtered out all non-English channels. Further we used the [Youtube API](https://developers.google.com/youtube/v3/docs/channels/list) to get the country of the channel. We then only kept the channels that are from the US to get more comparable results.
+After all this filter process we end up with _149_ channels, _2.5 million_ videos and _xxx million_ of comments.
+
+4. Then we get the relevant videos for our analysis by filtering for specific keywords related to each individual event.
+
+The choice of specific events to consider was a difficult one. The original plan was to consider the following event categories: political events, natural disasters, geopolitcal conflicts and economic crisis that happen in the US, Asia and Europe. This was then narrowed down further in order to include more events per category because we want it to representative of the event category rather than the specific events. The categories chosen are geopoitical conflicts and natural disasters in the US, Asia and Europe because in those categoriees it is easier to isolate single events. 
+
+We filtered for videos that concern a certain event using different combinations of keywords that have to appear in the title of the discription of the video in question and within a certain timeframe of the event. 
+
 
 Testing different plotly plots (plot included in _includes folder)
 
@@ -24,8 +37,8 @@ plot with iframe without borders:
 
 <iframe src="assets/plots/channels_activity_histogram.html" width="800" height="400" style="border:none;"></iframe>
 
-By scrolling through the list of channels you might have noticed two things. First, the majority of the channels sound like legit news channels (yayy!), but secondly there are some channels which do not seem to be english speaking. This happens even though the Youniverse dataset is supposed to only contain english speaking channels. To fix this problem we used the [chatGPT-4o mini](https://openai.com/api/) to detect the language of a small sample of videos and filtered out all non-english channels. Further we used the [Youtube API](https://developers.google.com/youtube/v3/docs/channels/list) to get the country of the channel. We then only kept the channels that are from the US to get more comparable results.
-After all this filter process we end up with _149_ channels, _2.5 million_ videos and _xxx million_ of comments.
+
+
 
 {% include channel_filtering_steps.html %}
 

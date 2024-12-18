@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Graphics</title>
+    <style>
+        /* Basic styling for the container and buttons */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .image-container {
+            margin-top: 20px;
+        }
+        img {
+            width: 400px;
+            height: auto;
+            display: none; /* Hide images by default */
+        }
+        .active {
+            display: block; /* Show the active image */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Toggle Between Graphics</h1>
+
+    <!-- Buttons to toggle between images -->
+    <button onclick="toggleImage(1)">Graphic 1</button>
+    <button onclick="toggleImage(2)">Graphic 2</button>
+    <button onclick="toggleImage(3)">Graphic 3</button>
+
+    <!-- Image container -->
+    <div class="image-container">
+        <img id="image1" src="https://via.placeholder.com/400x200?text=Graphic+1" alt="Graphic 1" class="active">
+        <img id="image2" src="https://via.placeholder.com/400x200?text=Graphic+2" alt="Graphic 2">
+        <img id="image3" src="https://via.placeholder.com/400x200?text=Graphic+3" alt="Graphic 3">
+    </div>
+
+    <script>
+        // JavaScript function to toggle between images
+        function toggleImage(imageNumber) {
+            // Hide all images
+            const images = document.querySelectorAll('img');
+            images.forEach(image => image.classList.remove('active'));
+
+            // Show the selected image
+            const selectedImage = document.getElementById('image' + imageNumber);
+            selectedImage.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
