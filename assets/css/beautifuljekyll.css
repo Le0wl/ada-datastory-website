@@ -44,7 +44,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin: 0;
 }
 body > main {
   flex: 1;
@@ -86,6 +85,10 @@ blockquote {
 }
 blockquote p:first-child {
   margin-top: 0;
+}
+.container, .container-md {
+  padding-left: 10px;  /* Decrease padding */
+  padding-right: 10px; /* Decrease padding */
 }
 .jumbotron {
   background: #EEE;
