@@ -93,6 +93,7 @@ Based on the metrics of the public's response we could classify the reaction int
 #### Week 6 (14.12.-20.12.):
 - conclusion of analysis
 
+<iframe src="assets/plots/keyword_toggle.html" width="800" height="400" style="border:none;"></iframe>
 
 
 ## Questions for TAs
