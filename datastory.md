@@ -27,7 +27,11 @@ plot with iframe without borders:
 By scrolling through the list of channels you might have noticed two things. First, the majority of the channels sound like legit news channels (yayy!), but secondly there are some channels which do not seem to be english speaking. This happens even though the Youniverse dataset is supposed to only contain english speaking channels. To fix this problem we used the [chatGPT-4o mini](https://openai.com/api/) to detect the language of a small sample of videos and filtered out all non-english channels. Further we used the [Youtube API](https://developers.google.com/youtube/v3/docs/channels/list) to get the country of the channel. We then only kept the channels that are from the US to get more comparable results.
 After all this filter process we end up with _149_ channels, _2.5 million_ videos and _xxx million_ of comments.
 
+{% include channel_filtering_steps.html %}
+
 <span style="color: red;">Explanation on how we selected the events. Explain breakdowns of different events and on which ones we are focusing. </span>
+
+{% include event_filtering_sankey.html %}
 
 
 <span style="color: red;">Plots about the events and a first dumb analysis. Interactive plot with times series (upload) of each events, way to visualize keywords</span>
