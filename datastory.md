@@ -35,7 +35,7 @@ Testing different plotly plots (plot included in _includes folder)
 
 plot with iframe without borders:
 
-<iframe src="assets/plots/channels_activity_histogram.html" width="800" height="400" style="border:none;"></iframe>
+<iframe src="assets/plots/channels_activity_histogram.html" width="100%" height="400" style="border:none;"></iframe>
 
 
 
