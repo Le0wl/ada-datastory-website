@@ -60,7 +60,9 @@ Explain what characterizes a video, i.e. the variables the news channel can infl
 
 The video duration was taken directly from the YouNiverse dataset. The type of video trying to identify live footage as opposed to studio recording, the distinction is based on weither the key word "footage" appears in the title. This keyword had the best performance compared to "live" that tended to also flag live streams and the verb live (as in I live here). 
 The caplitalization of the title is the ratio of upper case to lower case letters in the title. The recurring keywords are once again based on the titles but it is more to see what kinds of words appear. The frequeny of video video uploads describles the average dayly upload in the 2 weeks surrounding the upload of that specific video. 
+
 The subjectivity score has been obtained using OpenAI's API using the following promt:
+
 "your task is to evaluate the subjectivity of news video titles and give each one a score from 0 neutral to 1 highly subjective. The topic does not matter but the phrasing of the reporting. as an example "Switzerland obliterates all other countries in quality of life" would be more subjective than "Switzerland exceeds other countries in quality of life". only return the score"
 
 <span style="color: red;">Plot with statistics about each of those metrics where you can choose whether you want to group by region or event (or both?).</span>
@@ -82,7 +84,7 @@ These metrics were taken purely from the YouNiverse dataset and are conserning t
 [insert plot here showing off the responsemetrics]
 
 
-These metrics are all correlated to views because in order to interact with the video one has to click on it which qualifies as a view. Therefore in order to make the those what makes people more likely to comment and discuss these metrics were normalized by the views of the video 
+These metrics are all correlated to views because in order to interact with the video one has to click on it which qualifies as a view. Therefore in order to make the those what makes people more likely to comment and discuss these metrics were normalized by the views of the video.
 [insert correlation plot form samuel here]
 [insert normalized correlation plot form samuel here]
 
