@@ -84,7 +84,7 @@ These metrics were taken purely from the YouNiverse dataset and are conserning t
 [insert plot here showing off the responsemetrics]
 
 
-These metrics are all correlated to views because in order to interact with the video one has to click on it which qualifies as a view. Therefore in order to make the those what makes people more likely to comment and discuss these metrics were normalized by the views of the video.
+These metrics are all correlated to views because in order to interact with the video one has to click on it which qualifies as a view. Therefore in order to have more meaningfull data these metrics were normalized by the views of the video.
 [insert correlation plot form samuel here]
 [insert normalized correlation plot form samuel here]
 
