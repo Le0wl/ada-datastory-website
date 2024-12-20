@@ -102,6 +102,8 @@ These metrics are all correlated to views because in order to interact with the 
 [insert normalized correlation plot form samuel here]
 
 
+<iframe src="assets\plots\Linear_regression_final_plots.png" width="100%" height="600" style="border:none;"></iframe>
+
 
 
 
