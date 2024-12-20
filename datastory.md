@@ -109,7 +109,7 @@ Next, we ploted the correlation between the features and metrics in order to fin
 <iframe src="assets\plots\correlation_matrix_regions.html" width="100%" height="600" style="border:none;"></iframe>
 
 
-<iframe src="assets\plots\Linear_regression_final_plots.png" width="100%" height="600" style="border:none;"></iframe>
+<iframe src="assets\plots\Linear_regression_final_plots.png" width="100%" height="1000" style="border:none;"></iframe>
 
 
 <span style="color: red;">Plot with statistics about each of those metrics where you can choose whether you want to group by region or event (or both?).</span>
