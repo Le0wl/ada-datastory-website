@@ -65,6 +65,8 @@ The subjectivity score has been obtained using OpenAI's API using the following 
 
 "your task is to evaluate the subjectivity of news video titles and give each one a score from 0 neutral to 1 highly subjective. The topic does not matter but the phrasing of the reporting. as an example "Switzerland obliterates all other countries in quality of life" would be more subjective than "Switzerland exceeds other countries in quality of life". only return the score"
 
+<iframe src="assets/plots/wordclouds.html" width="100%" height="600" style="border:none;"></iframe>
+
 <span style="color: red;">Plot with statistics about each of those metrics where you can choose whether you want to group by region or event (or both?).</span>
 
 <span style="color: red;">Pick metrics which show a difference in either region or event category for a specific metric and provide t-test of the difference. Draw some conclusion about your analysis.</span>
