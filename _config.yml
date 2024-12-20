@@ -51,13 +51,13 @@ author:
 
 navbar-links:
   more about our Events: "events"
-  Sources:
+  Sources     :
     - ADA | CS-401: "https://epfl-ada.github.io/teaching/fall2024/cs401/"
     - YouNiverse dataset: "https://github.com/epfl-dlab/YouNiverse"
-    - Pew article on YouTube as a news scource: "https://www.pewresearch.org/journalism/2020/09/28/many-americans-get-news-on-youtube-where-news-organizations-and-independent-producers-thrive-side-by-side/"
-    - Similarweb's top websites ranking: "https://www.similarweb.com/top-websites/"
-    - MadPenguin on how many YouTube videos are uploaded: "https://www.madpenguin.org/how-many-youtube-videos-are-uploaded-every-day/"
-    - OpenAi's API for ChatGPT: "https://openai.com/api/"
+    - Pew research |YouTube as a news scource: "https://www.pewresearch.org/journalism/2020/09/28/many-americans-get-news-on-youtube-where-news-organizations-and-independent-producers-thrive-side-by-side/"
+    - Similarweb | top websites ranking: "https://www.similarweb.com/top-websites/"
+    - MadPenguin | how many YouTube videos are uploaded: "https://www.madpenguin.org/how-many-youtube-videos-are-uploaded-every-day/"
+    - OpenAi's API: "https://openai.com/api/"
     - YouTube's API: "https://developers.google.com/youtube/v3/docs/channels/list"
   #Author's home: "https://deanattali.com"
 
