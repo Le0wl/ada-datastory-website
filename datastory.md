@@ -38,7 +38,7 @@ Our goal is not only to study the spread of news, but to also examine how it is 
 
 <iframe src="assets/plots/channels_activity_histogram.html" width="100%" height="400" style="border:none;"></iframe>
 Here we can see our average activity cutoff on the distribution of news. The table of the righthand side makes it possible to have a look at the channels and their mean activity.
-<iframe src="assets/plots/channel_filtering_steps.html" width="80%" height="400" style="border:none;"></iframe>
+<iframe src="assets/plots/channel_filtering_steps.html" width="100%" height="400" style="border:none;"></iframe>
 The plot above illustrades our pipepline for filtering the channesl in it's different steps. Howering above the plot gives some additional details. 
 <iframe src="assets/plots/event_filtering_sankey.html" width="100%" height="600" style="border:none;"></iframe>
 
