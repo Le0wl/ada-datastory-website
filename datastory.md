@@ -1,10 +1,10 @@
 
 ## Introduction
-Journalism is often seen as the 4th pillar of democracy. It serves as a watchdog for the government, and keeps the public informed about events happening around the world. A century ago journalism was being reported mainly through newspapers, but today it has mostly migrated to the digital world. This shift made news more accessible than ever for the public, and signicicantly lowered the barrier to entry for independant journalists. In this datastory we dive into YouTube as a news source, analyzing how US new channels report on major geopolitical events and natural disaster using data provided by the [Youniverse](https://github.com/epfl-dlab/YouNiverse) dataset. 
+Journalism is often seen as the 4th pillar of democracy. It serves as a watchdog for the government, and keeps the public informed about events happening around the world. A century ago journalism was being reported mainly through newspapers, but today it has mostly migrated to the digital world. This shift made news more accessible than ever for the public, and signicicantly lowered the barrier to entry for independant journalists. In this datastory we dive into YouTube as a news source, analyzing how US news channels report on major geopolitical events and natural disasters using data provided by the [Youniverse](https://github.com/epfl-dlab/YouNiverse) dataset. 
 
-But why focus on YouTube? As the world's larget video-sharing platform and the [second most](https://en.wikipedia.org/wiki/List_of_most-visited_websites) often visited website in the world, YouTube is a major player in daily content with more than **5 billion** hours of video content [uploaded](https://www.madpenguin.org/how-many-youtube-videos-are-uploaded-every-day/) daily. Among this sea of content, the channels under category `News & Politics` have the most videos out of all categories, bolstering Youtube as a substantial vessel of information and news. In fact, a 2020 study found that [26%](https://www.pewresearch.org/journalism/2020/09/28/many-americans-get-news-on-youtube-where-news-organizations-and-independent-producers-thrive-side-by-side/) of US adults get their news from YouTube. This number has a lot of room to grow with the category getting comparatively few views compared to the amout of uploaded videos. With this mind studying YouTube as a news source, how channels report on about specific events and how the public engages with its content, offers valuable insights into how modern media affects the spread of news. The findings could help governments, NGOs, and media outlets optimize their use of YouTube during emergencies to maximize outreach and public response.
+But why focus on YouTube? As the world's larget video-sharing platform and the [second most](https://en.wikipedia.org/wiki/List_of_most-visited_websites) often visited website in the world, YouTube is a major player in daily content with more than **5 billion** hours of video [uploaded](https://www.madpenguin.org/how-many-youtube-videos-are-uploaded-every-day/) daily. Among this sea of content, the channels under category `News & Politics` have the third most videos out of all 15 categories, bolstering the role of Youtube as a substantial vessel of information and news. In fact, a 2020 study found that [26%](https://www.pewresearch.org/journalism/2020/09/28/many-americans-get-news-on-youtube-where-news-organizations-and-independent-producers-thrive-side-by-side/) of US adults get their news from YouTube. This number has a lot of room to grow given that the category getting comparatively few views compared to the amout of uploaded videos. With this in mind, investigating YouTube as a news source by examining how channels report on different events and how the subsequent public engagement offers valuable insights into how modern media affects the spread of news. The findings could help governments, NGOs, and media outlets optimize their use of YouTube during emergencies to maximize outreach and public response.
 
-TALK ABBOUT TREND
+*** TALK ABBOUT TREND AND POSSIBLE PREDICTION PLOS ***
 
 <iframe src="assets/plots/intro_pie.html" width="800" height="600" style="border:none;"></iframe>
 
@@ -15,20 +15,20 @@ TALK ABBOUT TREND
 - How does one make an effective news video to ellicit specific reactions and levels of interaction from the public?
 
 
-## Analysis and Findings
+# Methodology
 
-### What data we are looking at
+### Dataset and preprocessing
 
 The Youniverse dataset contains information about ~**73 million** of videos from more than **137'000** different channels. In addition there is metadata for over **8.6 billion** of comments. To get the videos we are interested in, we will filter the dataset in four steps.
-1. We filter the dataset for videos that are tagged with the category `News & Politics`.
-2. We further filter for relevant channels by only considering channels that have a high activity. The reasoning behind this idea is that we want to look into news _updates_ and thus channels posting less than 4 videos per day are not interesting for us.
-
+1. We filter the dataset for videos from channels that are tagged with the category `News & Politics`.
+2. We further filter for relevant channels by only considering the ones that have a high activity. The reason behind this is that we want to look into news _updates_ and thus channels posting sparsly are not interesting for use. We therefore set a minimum threshold of 4 videos per day.
+  
 By scrolling through the list of channels you might have noticed two things. First, the majority of the channels sound like legit news channels, but secondly there are some channels which do not seem to be English speaking. Even though the Youniverse dataset is supposed to only contain English speaking channels, especially Hindi and Arabic speaking channels were still present.
 
-3. We filter for English-speaking US-based channles.
+3. We filter for English-speaking US-based channels.
 
 To fix this problem we used the [chatGPT-4o mini](https://openai.com/api/) to detect the language of a small sample of videos and filtered out all non-English channels. Further we used the [Youtube API](https://developers.google.com/youtube/v3/docs/channels/list) to get the country of the channel. We then only kept the channels that are from the US to get more comparable results.
-After all this filter process we end up with _149_ channels, _2.5 million_ videos and _xxx million_ of comments.
+After all this filtering process we end up with _149_ channels, _2.5 million_ videos and _xxx million_ of comments.
 
 4. Then we get the relevant videos for our analysis by filtering for specific keywords related to each individual event.
 
