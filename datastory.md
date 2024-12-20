@@ -72,8 +72,9 @@ Looking for repeating patterns, we visualize the most common words in the titles
 
 <iframe src="assets/plots/wordclouds.html" width="100%" height="600" style="border:none;"></iframe>
 <iframe src="assets\plots\plot_video_metrics_event_region.html" width="100%" height="600" style="border:none;"></iframe>
-<iframe src="assets\plots\plot_video_metrics_event_type.html" width="100%" height="600" style="border:none;"></iframe>
 <iframe src="assets\plots\keywords_by_event.png" width="100%" height="600" style="border:none;"></iframe>
+
+<iframe src="assets\plots\plot_video_metrics_event_type.html" width="100%" height="600" style="border:none;"></iframe>
 <iframe src="assets\plots\keywords_by_region.png" width="100%" height="600" style="border:none;"></iframe>
 We can look at the difference in distributions of these metrics based on location and event type. or the US and Asia, subjectivity seems to be on average significantly higher for geopolitical events, whereas we don't see a massive difference in European events. Video duration seems to be longer for geopolitical events accross the board, potentially reflecting the general nature of reporting for such events where some analysis and discussion might typically follow the news update, providing more context and insights into the situation. Finally, in geopolitics, US-related events present higher subjectivity than Europe and Asia, as for environmental ones, Europe presents the highest subjectivity in reporting. 
 
