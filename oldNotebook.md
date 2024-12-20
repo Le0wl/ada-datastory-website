@@ -1,5 +1,6 @@
 ---
 layout: page
+title: Test Tilte
 cover-img: /assets/img/breaking.png
 ---
 
