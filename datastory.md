@@ -4,8 +4,7 @@ Journalism is often seen as the 4th pillar of democracy. It serves as a watchdog
 
 But why focus on YouTube? As the world's larget video-sharing platform and the [second most](https://en.wikipedia.org/wiki/List_of_most-visited_websites) often visited website in the world, YouTube is a major player in daily content with more than **5 billion** hours of video [uploaded](https://www.madpenguin.org/how-many-youtube-videos-are-uploaded-every-day/) daily. Among this sea of content, the channels under category `News & Politics` have the third most videos out of all 15 categories, bolstering the role of Youtube as a substantial vessel of information and news. In fact, a 2020 study found that [26%](https://www.pewresearch.org/journalism/2020/09/28/many-americans-get-news-on-youtube-where-news-organizations-and-independent-producers-thrive-side-by-side/) of US adults get their news from YouTube. This number has a lot of room to grow given that the category getting comparatively few views compared to the amout of uploaded videos. With this in mind, investigating YouTube as a news source by examining how channels report on different events and how the subsequent public engagement offers valuable insights into how modern media affects the spread of news. The findings could help governments, NGOs, and media outlets optimize their use of YouTube during emergencies to maximize outreach and public response.
 
-*** TALK ABBOUT TREND AND POSSIBLE PREDICTION PLOS ***
-
+The plot below illustrates the result from the Youniverse Paper that inspired this analysis. News and politics is the third most uploaded video category with 12% of all uploaded videos, but when it comes to views, the currency of YouTube, News lacks far behind the rest with a meager 1% of total views. 
 <iframe src="assets/plots/intro_pie.html" width="800" height="600" style="border:none;"></iframe>
 
 ## Research Questions
@@ -32,23 +31,20 @@ After all this filtering process we end up with _149_ channels, _2.5 million_ vi
 
 4. Then we get the relevant videos for our analysis by filtering for specific keywords related to each individual event.
    
-############# for readme
-
 To flag the related videos for each event, we looked for keywords in the titles and description of each video for any potential match. We define keywords and combinations of keywords that, if raise a match in either the title or description of the video, flag the video as relavant. For every event we define a list of lists, where each sublist has one or more keywords as strings. For a video to be flagged, at least one sublist has to match all its terms to the title or description. Finally we filter the results using upload time, where we only consider the time frame during which the specific event was occurring and still relevant.
-
-######### end of readme paragraph
 
 Our goal is not only to study the spread of news, but to also examine how it is affected by the location of the event in question as well as its type. For this purpose, we consider three general regions to compare: the US, Europe, and Asia. As for the event type, we settled on environmental disasters and geopolitical conflicts with a focus on armed clashes. For each category, we chose the largest and most impactful events to maximize the number of datapoints and have the most  accurate representation we could obtain. We flagged relavant videos for each event by searching for keywords in the titles and descriptions. We also added a second layer of filtering using the videos upload dates, where we only consider the time frame during which the specific event was occurring and still relevant.
 
 
 <iframe src="assets/plots/channels_activity_histogram.html" width="100%" height="400" style="border:none;"></iframe>
-
+Here we can see our average activity cutoff on the distribution of news. The table of the righthand side makes it possible to have a look at the channels and their mean activity.
 <iframe src="assets/plots/channel_filtering_steps.html" width="60%" height="400" style="border:none;"></iframe>
-
+The plot above illustrades our pipepline for filtering the channesl in it's different steps. Howering above the plot gives some additional details. 
 <iframe src="assets/plots/event_filtering_sankey.html" width="100%" height="600" style="border:none;"></iframe>
-
+This plot illustrates the events that were chosen for this analysis. With the band thickness corresponding to the amount of videos found for each event.
 
 <iframe src="assets\plots\time_series.html" width="100%" height="600" style="border:none;"></iframe>
+Here we show the spike in videos connected to each event that was chosen for this analysis.
 
 ### Characteristics of videos
 <span style="color: red;">
