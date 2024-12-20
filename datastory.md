@@ -40,9 +40,6 @@ To flag the related videos for each event, we looked for keywords in the titles 
 
 Our goal is not only to study the spread of news, but to also examine how it is affected by the location of the event in question as well as its type. For this purpose, we consider three general regions to compare: the US, Europe, and Asia. As for the event type, we settled on environmental disasters and geopolitical conflicts with a focus on armed clashes. For each category, we chose the largest and most impactful events to maximize the number of datapoints and have the most  accurate representation we could obtain. We flagged relavant videos for each event by searching for keywords in the titles and descriptions. We also added a second layer of filtering using the videos upload dates, where we only consider the time frame during which the specific event was occurring and still relevant.
 
-**** point to tree plots for the events *****
-
-plot with iframe without borders:
 
 <iframe src="assets/plots/channels_activity_histogram.html" width="100%" height="400" style="border:none;"></iframe>
 
@@ -50,7 +47,6 @@ plot with iframe without borders:
 
 <iframe src="assets/plots/event_filtering_sankey.html" width="100%" height="600" style="border:none;"></iframe>
 
-<span style="color: red;">Plots about the events and a first dumb analysis. Interactive plot with times series (upload) of each events, way to visualize keywords</span>
 
 <iframe src="assets\plots\time_series.html" width="100%" height="600" style="border:none;"></iframe>
 
@@ -97,7 +93,6 @@ The choice of the first metric is quite straightforward. The second metric howev
 This enables us to assess the extent to which a particular video entices people to discuss the videos' content in the comments. The comments/views ratio reflects how effectively a video captures public attention and prompts responses. If viewers are commenting frequently, the content likely resonates with concerns or prompts urgent reactions. By maximizing comments/views, NGOs and governments can drive awareness campaigns, ensuring key messages are reaching emotionally engaged audiences who are likely to spread critical information. Similarly, the last metric aims at capturing the degree of deeper discussion, debates and interactions taking place between the users. Maximizing replies per comment could create discussion hubs where people share resources, housing offers, or real-time situation updates, fostering a decentralized aid network. If an NGO posts a video about flood relief efforts and maximizes the comments/views ratio, more people will be exposed to the urgency of the situation, possibly prompting donations or volunteer sign-ups. Encouraging replies per comment fosters conversations where users can challenge misinformation, share verified updates, and provide corrections. By actively participating in these discussions, pinning accurate comments, and promoting trusted sources, organizations can create an interactive space where accurate information gains visibility, helping to reduce the spread of false or misleading content. In addition, high engagement indicates heightened public interest or concern, allowing governments and NGOs to assess whether crisis-related videos are raising awareness effectively.
 
 
-[insert plot here showing off the responsemetrics]
 <iframe src="assets\plots\plot_video_metrics_response_region.html" width="100%" height="600" style="border:none;"></iframe>
 <iframe src="assets\plots\plot_video_metrics_response_event_type.html" width="100%" height="600" style="border:none;"></iframe>
 
@@ -109,12 +104,9 @@ Having defined our video features and response metrics, we were now ready to rel
 
 Next, we ploted the correlation between the features and metrics in order to find a way to link them together. We grouped them differently in order to observe the difference between events, event types, regions. The plots below show the results of the correlations along with p-values to indicate how significant the results are (note that for entries where the variance of the sample was zero, we mapped the correlation coefficient to zero, and the p-value to 1).
 
-[insert correlation plot form samuel here]
 <iframe src="assets\plots\correlation_matrix_event_types.html" width="100%" height="600" style="border:none;"></iframe>
 <iframe src="assets\plots\correlation_matrix_events.html" width="100%" height="600" style="border:none;"></iframe>
 <iframe src="assets\plots\correlation_matrix_regions.html" width="100%" height="600" style="border:none;"></iframe>
-
-[insert normalized correlation plot form samuel here]
 
 
 <iframe src="assets\plots\Linear_regression_final_plots.png" width="100%" height="600" style="border:none;"></iframe>
