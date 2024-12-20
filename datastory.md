@@ -34,7 +34,7 @@ After all this filtering process we end up with _149_ channels, _2.5 million_ vi
 
 
 # for the readme / notebook #
-Our goal is not only to study the spread of news, but to also examine how it is affected by the location of the event in question as well as its type. For this purpose, we consider three general regions to compare: the US, Europe, and Asia. As for the event type, we originally went for four classes: geopolotical conflicts (focusing on armed clashes), enviornmental disasters, economical crisis and political (mainly elections), with the goal of having two events per categories per location. However we later decided to reduce the number of event types and increase the number of videos per type to have a more accuracte and complete representation.
+Our goal is not only to study the spread of news, but to also examine how it is affected by the location of the event in question as well as its type. For this purpose, we consider three general regions to compare: the US, Europe, and Asia. As for the event type, we originally went for four classes: geopolotical conflicts (focusing on armed clashes), enviornmental disasters, economical crisis and political (mainly elections), with the goal of having two events per categories per location. However we later decided to reduce the number of event types and increase the number of videos per type to have a more accuracte and complete representation. 
 
 ***Geopolitical conflicts/ armed conflicts***
 
@@ -105,23 +105,22 @@ plot with iframe without borders:
 We define several video metrics that will be used to attempt to predict the audience's response. We consider factors that can be controlled by the video creator and that ideally can be optimized to maximize outreach. For every video, we compute and store: 
 
 - video duration
-- type of video (on ground footage or not): filtered based on wether or not the word "footage" appears in the title.
+- type of video (on ground footage or not). 
 - frequency of uploads of the channel at time of video upload
-- capitalization ratio of title: ration of capital letters
+- capitalization ratio of title
 - appearance of specific keywords in the title: "breaking" and "update"
 - Subjectivity score</span>
 
-The video duration was taken directly from the YouNiverse dataset. The type of video trying to identify live footage as opposed to studio recording, the distinction is based on weither the key word "footage" appears in the title. This keyword had the best performance compared to "live" that tended to also flag live streams and the verb live (as in I live here). The frequeny of video video uploads describles the average dayly upload in the 2 weeks surrounding the upload of that specific video. 
+The video duration was taken directly from the YouNiverse dataset. The type of video reflects if it shows ground footage or not, and the filtering is done based on wether or not the word "footage" appears in the title. The frequeny of video uploads describles the average daily upload frequency of the specific channel in the 2 weeks surrounding the upload of that specific video. The video title are offer us a few metrics. The caplitalization of the title is the ratio of upper case letters in the title. The title is also used to sarch for common keywords, mainly "breaking" and "update". Finally we generate a subjectivity score for each title using OpenAI's API using the following promt:
+"your task is to evaluate the subjectivity of news video titles and give each one a score from 0 neutral to 1 highly subjective. The topic does not matter but the phrasing of the reporting. As an example "Switzerland obliterates all other countries in quality of life" would be more subjective than "Switzerland exceeds other countries in quality of life". Only return the score"
 
-The video title are offer us a few metrics. The caplitalization of the title is the ratio of upper case to lower case letters in the title, then we look at recurring keywords in the titles to see if they affect response and for a more quantitative measure there is a subjectivity score that has been obtained using OpenAI's API using the following promt:
+Looking for repeating patterns, we visualize the most common words in the titles via the wordclouds below, separated by region and event type. For the US and Asia, subjectivity seems to be on average higher for geopolitical events, whereas we don't see significant difference in European events. 
 
-"your task is to evaluate the subjectivity of news video titles and give each one a score from 0 neutral to 1 highly subjective. The topic does not matter but the phrasing of the reporting. as an example "Switzerland obliterates all other countries in quality of life" would be more subjective than "Switzerland exceeds other countries in quality of life". only return the score"
-
-To look at the titles for the different events the most common words and experesstions are ploted in the wordclouds below:
 <iframe src="assets/plots/wordclouds.html" width="100%" height="600" style="border:none;"></iframe>
-
 <iframe src="assets\plots\plot_video_metrics_event_region.html" width="100%" height="600" style="border:none;"></iframe>
 <iframe src="assets\plots\plot_video_metrics_event_type.html" width="100%" height="600" style="border:none;"></iframe>
+
+We can look at the difference in distributions of these metrics based on location and event type.
 
 <span style="color: red;">Plot with statistics about each of those metrics where you can choose whether you want to group by region or event (or both?).</span>
 
