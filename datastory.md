@@ -71,12 +71,16 @@ Looking for repeating patterns, we visualize the most common words in the titles
 This plot illustrates the most common words and phrased in the titles of the videos. The type of event and region can be selected, it shows what events are dominant within a category and the kind of langues used when discribing the event.
 
 <iframe src="assets\plots\plot_video_metrics_event_region.html" width="100%" height="600" style="border:none;"></iframe>
-<div style="text-align: center;">
-    <iframe src="assets\plots\keywords_by_region.png" width="100%" height="600" style="border:none; display: inline-block;"></iframe>
-</div>
+Here we can see the distribution of video metrics for both environmental and geopolitical events grouped by region. 
+<iframe src="assets\plots\keywords_by_region.png" width="100%" height="600" style="border:none; display: inline-block;"></iframe>
+These pie charts show how many videos contain the keywords: breaking, update, and footage in the title based on the event region.
+
 <iframe src="assets\plots\plot_video_metrics_event_type.html" width="100%" height="600" style="border:none;"></iframe>
+Here we can see the distribution of video metrics for regions grouped by type of event. 
+
 <iframe src="assets\plots\keywords_by_event.png" width="100%" height="600" style="border:none;"></iframe>
 
+These pie charts show how many videos contain the keywords: breaking, update, and footage in the title based on the event type.
 
 We can look at the difference in distributions of these metrics based on location and event type. or the US and Asia, subjectivity seems to be on average significantly higher for geopolitical events, whereas we don't see a massive difference in European events. Video duration seems to be longer for geopolitical events accross the board, potentially reflecting the general nature of reporting for such events where some analysis and discussion might typically follow the news update, providing more context and insights into the situation. Finally, in geopolitics, US-related events present higher subjectivity than Europe and Asia, as for environmental ones, Europe presents the highest subjectivity in reporting. 
 
@@ -98,7 +102,9 @@ This enables us to assess the extent to which a particular video entices people 
 
 
 <iframe src="assets\plots\plot_video_metrics_response_region.html" width="100%" height="600" style="border:none;"></iframe>
+Here we can see the distribution of public response metrics for both environmental and geopolitical events grouped by region. 
 <iframe src="assets\plots\plot_video_metrics_response_event_type.html" width="100%" height="600" style="border:none;"></iframe>
+Here we can see the distribution of public response metrics for regions grouped by type of event. 
 
 
 These metrics are all correlated to views because in order to interact with the video one has to click on it which qualifies as a view. Therefore in order to have more meaningfull data these metrics were normalized by the views of the video.
@@ -110,13 +116,19 @@ Having defined our video features and response metrics, we were now ready to rel
 Next, we ploted the correlation between the features and metrics in order to find a way to link them together. We grouped them differently in order to observe the difference between events, event types, regions. The plots below show the results of the correlations along with p-values to indicate how significant the results are (note that for entries where the variance of the sample was zero, we mapped the correlation coefficient to zero, and the p-value to 1).
 
 <iframe src="assets\plots\correlation_matrix_event_types.html" width="100%" height="600" style="border:none;"></iframe>
+This is the correlation matrix between video features and response metrics for the videos grouped by event type.
+
 <iframe src="assets\plots\correlation_matrix_events.html" width="100%" height="600" style="border:none;"></iframe>
+This is the correlation matrix between video features and response metrics for each individual event.
+
 <iframe src="assets\plots\correlation_matrix_regions.html" width="100%" height="600" style="border:none;"></iframe>
+This is the correlation matrix between video features and response metrics for the videos grouped by region.
 
 The distribution of the some of these metrics, mainly the categorical ones, as well as the number of videos per event category, are noticeably unbalanced, which may fail to capture the true underlying relationships, explaining some high p values and uncertainties in our results later on.
 For the linear regression below, we standardize the continuous variables, i.e. the subjectivity, duration, channel activity, capitalization ratio. Statistical significance is considered for p values lower than 0.05. 
 
-<iframe src="assets\plots\Linear_regression_final_plots.png" width="100%" height="1000" style="border:none;"></iframe>
+<iframe src="assets\plots\linear_regression_plot.html" width="100%" height="1000" style="border:none;"></iframe>
+
 
 As you can see, all R2 values are hilariously low. However, this is okay because we are not trying to fully capture the entire distribution and variance of the response metrics. We only are looking for quantifying the effect of the video features on said metrics.
 
