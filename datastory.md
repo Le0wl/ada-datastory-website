@@ -41,6 +41,7 @@ Here we can see our average activity cutoff on the distribution of news. The tab
 <iframe src="assets/plots/channel_filtering_steps.html" width="60%" height="400" style="border:none;"></iframe>
 The plot above illustrades our pipepline for filtering the channesl in it's different steps. Howering above the plot gives some additional details. 
 <iframe src="assets/plots/event_filtering_sankey.html" width="100%" height="600" style="border:none;"></iframe>
+
 This plot illustrates the events that were chosen for this analysis. With the band thickness corresponding to the amount of videos found for each event.
 
 <iframe src="assets\plots\time_series.html" width="100%" height="600" style="border:none;"></iframe>
@@ -62,6 +63,7 @@ The video duration was taken directly from the YouNiverse dataset. The type of v
 _"your task is to evaluate the subjectivity of news video titles and give each one a score from 0 neutral to 1 highly subjective. The topic does not matter but the phrasing of the reporting. As an example "Switzerland obliterates all other countries in quality of life" would be more subjective than "Switzerland exceeds other countries in quality of life". Only return the score"_
 
 It is worth noting that subjectivity assessment is the most meaningful for geopolitical events, where personal agendas and political views might impact the reporting and the phrasing of video titles. For environmental events, this concept is not as potent or relavant, but will be assessed nontheless. 
+With that being said, this approach to estimating subjectivity might not be very accurate and reliable, as it’s heavily dependent on the LLM used as well as the prompting. For that reason, the subjectivity score that we used should be interpreted with caution, however it might still reveal interesting insights, and could be further refined with a more robust model or prompt. 
 
 Looking for repeating patterns, we visualize the most common words in the titles via the wordclouds below, separated by region and event type. 
 
@@ -101,6 +103,7 @@ This enables us to assess the extent to which a particular video entices people 
 
 These metrics are all correlated to views because in order to interact with the video one has to click on it which qualifies as a view. Therefore in order to have more meaningfull data these metrics were normalized by the views of the video.
 
+## Results and Analysis 
 
 Having defined our video features and response metrics, we were now ready to relate them together. Our first simple approach was to calculate the pearsonr correlation coefficient between these variables. The PearsonR coefficient is an indicator of linear correlation, and therefore can reveal such linear relationships between our variables. We also computed the p-value corresponding to the null hypothesis that a random sample would give an equally strong correlation.
 
@@ -110,11 +113,30 @@ Next, we ploted the correlation between the features and metrics in order to fin
 <iframe src="assets\plots\correlation_matrix_events.html" width="100%" height="600" style="border:none;"></iframe>
 <iframe src="assets\plots\correlation_matrix_regions.html" width="100%" height="600" style="border:none;"></iframe>
 
+The distribution of the some of these metrics, mainly the categorical ones, as well as the number of videos per event category, are noticeably unbalanced, which may fail to capture the true underlying relationships, explaining some high p values and uncertainties in our results later on.
+For the linear regression below, we standardize the continuous variables, i.e. the subjectivity, duration, channel activity, capitalization ratio. Statistical significance is considered for p values lower than 0.05. 
 
 <iframe src="assets\plots\Linear_regression_final_plots.png" width="100%" height="1000" style="border:none;"></iframe>
 
+As you can see, all R2 values are hilariously low. However, this is okay because we are not trying to fully capture the entire distribution and variance of the response metrics. We only are looking for quantifying the effect of the video features on said metrics.
 
-<span style="color: red;">Plot with statistics about each of those metrics where you can choose whether you want to group by region or event (or both?).</span>
+**View count**
+We notice that all three categorical variables have high p values and uncertainties, so we cannot draw a meaningful relationship to the view count. Subjectivity also displays high p values. Duration, channel activity and capitalization ratio are all statistically significant for environmental events, unlike geopolitical ones where duration doesn’t seem to be significant. The highest coefficient in absolute value for both event types is being attributed to channel activity, followed by capitalization ratio, then duration. However channel activity is positively correlated with the view count for geopolitical events but negatively for environmental. Capitalization ratio has a positive correlation in both categories, and could be simply explained by plain old click baiting with all caps titles. 
 
-<span style="color: red;">Again perform t-test for metrics which do show a difference and draw conclusion</span>
+**(Likes - dislikes)/views**
+Duration, channel activity, and capitalization ratio are all statistically significant in their relation to the likes-dislikes metric for both event categories. Subjectivity and _breaking_ are only statistically significant for environmental events. _Update_ is only significant for geopolitical events, and is_footage is significant for neither types. The features with the most effect on the metric are _breaking_ and _update_ , followed by activity and capitalization ratio. The interpretation of this metric is tricker than the others, we will nonetheless attempt to explain the observation. A high coefficient for _breaking_, which is typically used for the first reporting of a natural disaster, likely includes the first “shocking” updates, which entices people to react and like the video in order to see more about it. On the other hand, _update_ has a negative coefficient for geopolitical events, potentially showing that people aren’t as interested in seeing updates of the same story compared to novel news and stories. 
 
+**Replies per comment**
+Looking at the replies per comment, we notice that capitalization ratio and channel activity are two statistically significant characteristics that affect replies per comment. For capitalization ratios, we see a positive coefficient with both event types. One possible explanation could be that videos with higher capitalization ratios can be ones with attention-grabbing titles, attracting more views, and thus more responses to the videos. This also is linked with the correlation of capitalization to view count.
+We notice that the metric of channel activity has an inverse effect on replies per comment between Geopolitical events and environmental crises. Geopolitical events show a positive correlation for replies per comment, while environmental ones have a negative correlation. However, natural disasters may have fewer dynamic updates, so after receiving the first news of an event, viewers may not expect to see many new updates, so people may not be stirred to provide feedback. Another possible explanation for the inverse relation could be attention fatigue. The news of a natural disaster does not significantly change in nature with time from its first breaking news, and people might already anticipate the coming news. Hence, more videos from the channel covering the topic would be less likely to be viewed. 
+Keyword update has a negative coefficient in geopolitical events. This is somewhat expected, since there is usually less to talk about and discuss in a story that has been going on for a while as opposed to a breaking one. Hence regular updates result in less discussion among the users.
+We also see that videos with the keyword footage provide a significant positive correlation, with an uncertainty that puts it still in the positive domain. This could be attributed to the content of the videos. Geopolitical events are often ongoing with the potential for large shifts in the situation, such as losses in battles, and political decisions being made. Thus, new videos could spark users’ discussions in comments as they digest the ramifications of the updates. 
+Along the same lines with impactful keywords, we see that the word “breaking” has a statistically significant positive correlation with the replies per comment. This could be because disasters are reported with “Breaking” in the title, which could be the initial reporting done. This initial reporting could evoke discussions about the state of the situation and the communication of people who may be in the wake of the disaster and those who are outside, who may be interested in further investigating it.
+
+**Comments per views**
+Capitalization ratio is statistically significant for both event types. For environmental, duration, channel activity and _breaking_ are also significant, and for geopolitical, only footage and _update_ are also significant. For geopolitical, once again footage has a positive coefficient with the metric, showing more engagement and discussions when the video has actual footage of the event reported on. And once again, keyword update has a negative coefficient, showing that old stories engage less than public and spark less discussions, as expected. As for environmental, keyword breaking has the highest impact on the metric, where breaking news result in a lot of comments per views. Similarly to the other metrics, channel activity has a high negative coefficient, which is inline with the general trends that recurrent news results in less engagement from the public.
+
+## Conclusion
+In this work we studied the spread of news in Youtube by examining the response of users to different video attributes for different event types and locations. The study was conducted on US-based, english speaking, high upload frequency channels. The assessment of the userbase's reaction is quantified through a set of four different metrics that aim at describing different types of response. Through regression, we observe two major trends. First, based on the features "channel activity", "_update_" and "_breaking_", we can notice that, in general, recurrent news, or news about an "old" story, gathers less engagement from and discusssion among the public compared to breaking ones and new stories. The second trend is based on the feature "is_footage", where videos consisting of footage about the reported event induces noticably more discussions and back and forth among the viewers.
+
+Both these conclusions can be used by governments, NGO's and other public bodies to maximize the outreach and spread of information during crises.
