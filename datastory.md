@@ -52,6 +52,8 @@ plot with iframe without borders:
 
 <span style="color: red;">Plots about the events and a first dumb analysis. Interactive plot with times series (upload) of each events, way to visualize keywords</span>
 
+<iframe src="assets\plots\time_series.html" width="100%" height="600" style="border:none;"></iframe>
+
 ### Characteristics of videos
 <span style="color: red;">
 
