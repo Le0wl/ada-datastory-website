@@ -95,7 +95,7 @@ These metrics were taken purely from the YouNiverse dataset and are conserning t
 
 These metrics are all correlated to views because in order to interact with the video one has to click on it which qualifies as a view. Therefore in order to have more meaningfull data these metrics were normalized by the views of the video.
 [insert correlation plot form samuel here]
-<iframe src="assets\plots\correlation_matrix_event_type.html" width="100%" height="600" style="border:none;"></iframe>
+<iframe src="assets\plots\correlation_matrix_event_types.html" width="100%" height="600" style="border:none;"></iframe>
 <iframe src="assets\plots\correlation_matrix_events.html" width="100%" height="600" style="border:none;"></iframe>
 <iframe src="assets\plots\correlation_matrix_regions.html" width="100%" height="600" style="border:none;"></iframe>
 
