@@ -34,11 +34,6 @@ The choice of specific events to consider was a difficult one. The original plan
 
 We filtered for videos that concern a certain event using different combinations of keywords that have to appear in the title of the discription of the video in question and within a certain timeframe of the event. 
 
-
-Testing different plotly plots (plot included in _includes folder)
-
-{% include channels_activity_histogram.html %}
-
 plot with iframe without borders:
 
 <iframe src="assets/plots/channels_activity_histogram.html" width="100%" height="400" style="border:none;"></iframe>
