@@ -47,7 +47,6 @@ This plot illustrates the events that were chosen for this analysis. With the ba
 Here we show the spike in videos connected to each event that was chosen for this analysis.
 
 ### Characteristics of videos
-<span style="color: red;">
 
 We define several video metrics that will be used to attempt to predict the audience's response. We consider factors that can be controlled by the video creator and that ideally can be optimized to maximize outreach. For every video, we compute and store: 
 
@@ -56,7 +55,7 @@ We define several video metrics that will be used to attempt to predict the audi
 - frequency of uploads of the channel at time of video upload
 - capitalization ratio of title
 - appearance of specific keywords in the title: "breaking" and "update"
-- Subjectivity score</span>
+- Subjectivity score
 
 The video duration was taken directly from the YouNiverse dataset. The type of video reflects if it shows ground footage or not, and the filtering is done based on wether or not the word "footage" appears in the title. The frequeny of video uploads describles the average daily upload frequency of the specific channel in the 2 weeks surrounding the upload of that specific video. The video title are offer us a few metrics. The caplitalization of the title is the ratio of upper case letters in the title. The title is also used to sarch for common keywords, mainly "breaking" and "update". Finally we generate a subjectivity score for each title using OpenAI's API using the following promt:
 
@@ -67,6 +66,7 @@ It is worth noting that subjectivity assessment is the most meaningful for geopo
 Looking for repeating patterns, we visualize the most common words in the titles via the wordclouds below, separated by region and event type. 
 
 <iframe src="assets/plots/wordclouds.html" width="100%" height="600" style="border:none;"></iframe>
+This plot illustrates the most common words and phrased in the titles of the videos. The type of event and region can be selected, it shows what events are dominant within a category and the kind of langues used when discribing the event.
 
 <iframe src="assets\plots\plot_video_metrics_event_region.html" width="100%" height="600" style="border:none;"></iframe>
 <div style="text-align: center;">
