@@ -38,7 +38,7 @@ Our goal is not only to study the spread of news, but to also examine how it is 
 
 <iframe src="assets/plots/channels_activity_histogram.html" width="100%" height="400" style="border:none;"></iframe>
 Here we can see our average activity cutoff on the distribution of news. The table of the righthand side makes it possible to have a look at the channels and their mean activity.
-<iframe src="assets/plots/channel_filtering_steps.html" width="60%" height="400" style="border:none;"></iframe>
+<iframe src="assets/plots/channel_filtering_steps.html" width="80%" height="400" style="border:none;"></iframe>
 The plot above illustrades our pipepline for filtering the channesl in it's different steps. Howering above the plot gives some additional details. 
 <iframe src="assets/plots/event_filtering_sankey.html" width="100%" height="600" style="border:none;"></iframe>
 
@@ -84,10 +84,8 @@ These pie charts show how many videos contain the keywords: breaking, update, an
 
 We can look at the difference in distributions of these metrics based on location and event type. or the US and Asia, subjectivity seems to be on average significantly higher for geopolitical events, whereas we don't see a massive difference in European events. Video duration seems to be longer for geopolitical events accross the board, potentially reflecting the general nature of reporting for such events where some analysis and discussion might typically follow the news update, providing more context and insights into the situation. Finally, in geopolitics, US-related events present higher subjectivity than Europe and Asia, as for environmental ones, Europe presents the highest subjectivity in reporting. 
 
-<span style="color: red;">Pick metrics which show a difference in either region or event category for a specific metric and provide t-test of the difference. Draw some conclusion about your analysis.</span>
 
 ### Public engagement
-<span style="color: red;">What we understand by public response. Why does it matter? (News spread, fake news, etc.)
 
 We now need metrics to quantify and describe the response of the public to videos. To do so, and after considering numerous options, we landed on the following four:
 
