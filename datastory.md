@@ -73,8 +73,9 @@ Looking for repeating patterns, we visualize the most common words in the titles
 <iframe src="assets/plots/wordclouds.html" width="100%" height="600" style="border:none;"></iframe>
 
 <iframe src="assets\plots\plot_video_metrics_event_region.html" width="100%" height="600" style="border:none;"></iframe>
-<iframe src="assets\plots\keywords_by_region.png" width="100%" height="600" style="border:none;"></iframe>
-
+<div style="text-align: center;">
+    <iframe src="assets\plots\keywords_by_region.png" width="100%" height="600" style="border:none; display: inline-block;"></iframe>
+</div>
 <iframe src="assets\plots\plot_video_metrics_event_type.html" width="100%" height="600" style="border:none;"></iframe>
 <iframe src="assets\plots\keywords_by_event.png" width="100%" height="600" style="border:none;"></iframe>
 
