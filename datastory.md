@@ -6,7 +6,7 @@ But why focus on YouTube? As the world's larget video-sharing platform and the [
 
 TALK ABBOUT TREND
 
-<iframe src="assets/plots/videos_by_cat.html" width="800" height="600" style="border:none;"></iframe>
+<iframe src="assets/plots/intro_pie.html" width="800" height="600" style="border:none;"></iframe>
 
 ## Research Questions
 
