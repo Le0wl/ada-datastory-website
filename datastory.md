@@ -66,6 +66,9 @@ The video title are offer us a few metrics. The caplitalization of the title is 
 To look at the titles for the different events the most common words and experesstions are ploted in the wordclouds below:
 <iframe src="assets/plots/wordclouds.html" width="100%" height="600" style="border:none;"></iframe>
 
+<iframe src="assets\plots\plot_video_metrics_event_region.html" width="100%" height="600" style="border:none;"></iframe>
+<iframe src="assets\plots\plot_video_metrics_event_type.html" width="100%" height="600" style="border:none;"></iframe>
+
 <span style="color: red;">Plot with statistics about each of those metrics where you can choose whether you want to group by region or event (or both?).</span>
 
 <span style="color: red;">Pick metrics which show a difference in either region or event category for a specific metric and provide t-test of the difference. Draw some conclusion about your analysis.</span>
@@ -83,6 +86,8 @@ Introduce our metrics for measuring the public response:
 
 These metrics were taken purely from the YouNiverse dataset and are conserning the news videos we chose to analyse above. 
 [insert plot here showing off the responsemetrics]
+<iframe src="assets\plots\plot_video_metrics_response_region.html" width="100%" height="600" style="border:none;"></iframe>
+<iframe src="assets\plots\plot_video_metrics_response_event_type.html" width="100%" height="600" style="border:none;"></iframe>
 
 
 These metrics are all correlated to views because in order to interact with the video one has to click on it which qualifies as a view. Therefore in order to have more meaningfull data these metrics were normalized by the views of the video.
