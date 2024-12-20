@@ -1,100 +1,51 @@
+# Our Choice of Events
 
-# The Spread of News During Crisis
-## Abstract
-A lot of people use YouTube as their source of news. In this project, we try to look at the news landscape on YouTube and see how the news is reported and how the public engages with it. For this, we analyze big US News Channels to see how they report on different events in the realms of politics, geopolitical conflicts, economic crises, and natural disasters happening in the US, Europe, and Asia. We will analyze if there are any overarching reporting trends or biases between these events, like video style or duration. Then we will look at the public response to these news videos to see if certain video features correlate with more engagement for a specific event. Based on that information we then want to formulate suggestions for what features could lead to a more effective video to start discussions or attract more viewership.
+Our goal is not only to study the spread of news, but to also examine how it is affected by the location of the event in question as well as its type. For this purpose, we consider three general regions to compare: the US, Europe, and Asia. As for the event type, we originally went for four classes: geopolotical conflicts (focusing on armed clashes), enviornmental disasters, economical crisis and political (mainly elections), with the goal of having two events per categories per location. However we later decided to reduce the number of event types and increase the number of videos per type to have a more accuracte and complete representation.
 
-## Research Questions
-- How does the reporting of events by US news channels change with respect to the type of event as well as its location?
-- How is the public's response to an event affected by its nature, location, and video format through which it is presented?
-- How does one make an effective news video to ellicit specific reactions and levels of interaction from the public?
+## Geopolitical conflicts/ armed conflicts
 
-## Proposed additional datasets
-- We enriched our channel metadata set by adding the country of the channel using the [Youtube API](https://developers.google.com/youtube/v3).
+### US:
 
-## Methods
-#### Filter the initial data: 
-The Youniverse dataset is big. As we only focus on a fraction of the data we propose the following pipeline to get the data we need:
-Below is a figure describing at a high level the filtering of the channels with a description below
- ![channel_filter_pipeline](assets/img/channel_filter_pipeline.jpg)
+- Mosul Offensive (2016-2017) - Iraq: A major urban battle where Iraqi security forces, backed by US-led coalition airpower and international special forces, launched a nine-month campaign to liberate Mosul from ISIS control. The conflict saw intense street-by-street fighting and significant civilian casualties, ending with the city’s recapture but leaving much of it in ruins.
 
-- **Get the Channels of Interest (CoI):** 
-    - Filter out all channels that do not belong to the category "News & Politics". For this, we use the df_channels_en.tsv dataframe.
-    - We only focus on channels providing News Updates having a high activity. We only keep the channels with an average activity above 56 (corresponds to 4 videos per day for 2 weeks). For this, we use timeseries data the df_timeseries_en.tsv. 
-        - To ease the handling of the big dataframes we do an initial filtering of yt_metadata.jsonl with the CoI obtained so far.
-    - Even though the authors of the Youniverse dataset already filtered non-english speaking channels it turns out that there is still an important fraction of News channels in Hindi or other languages. We thus further filter the CoI obtained by the two previous steps using OpenAI's ChatGPT API to predict the language of the channel. For this, we sample 5 video titles and descriptions and pass them into a prompt asking the LLM to analyze the text to determine the channel's language. If any of the 5 videos is labeled non-English, the channel is removed from the dataset. 
-    - We also obtain country information for a majority of the CoI. This was done with the YouTube Data API. Since the channel country data was fetched from today, we assume the country is the same as when the dataset was formed. Around 40-50 channels did not have their country of origin in the API data, so manual verification was performed, by visiting the channel page and/or other social media like X and Facebook.
+- Battle of Kobani (2014-2015) - Syria: A key turning point in the war against ISIS, where Kurdish YPG forces, supported by US-led coalition airstrikes, defended the besieged city of Kobani near the Turkish border. The fierce, months-long battle significantly weakened ISIS and showcased the effectiveness of Kurdish and US-coalition collaboration.
+- Battle of Raqqa (June - October 2017) - Syria: The climactic urban combat operation where the US-backed Syrian Democratic Forces (SDF) recaptured Raqqa, ISIS’s self-declared capital. Supported by extensive US airstrikes, the battle resulted in heavy casualties and large-scale destruction, symbolizing the collapse of ISIS’s territorial control.
+- Kunduz City Attack (2015) - Afghanistan: Taliban forces launched a surprise assault on Kunduz, seizing the city for several days before being driven out by Afghan forces with US air support. The campaign drew international condemnation after a US airstrike mistakenly hit a Médecins Sans Frontières (MSF) hospital, causing significant civilian casualties.
+- Battle of Sirte (2016) - Libya: Libyan government-aligned forces, with support from US airstrikes, fought for control of Sirte, ISIS’s North African stronghold. After months of intense street fighting, Libyan forces reclaimed the city, dealing a major blow to ISIS’s presence in the region.
 
-- **Get the Videos of Interest (VoI)**  
-Below is a figure describing at a high level the filtering of the videos 
-  ![video_filter_pipeline](assets/img/youtube_metadata_pipeline.jpg)
-    - Only keep videos from the CoI in yt_metadata.jsonl.
-    - For every event get the VoI by searching the title, description, and tags with specific keywords.
+### Asia:
 
-- **Filter out relevant comments using VoI**   
-Below is a figure describing at a high level the filtering of the comments
-    ![comment_filter_pipeline](assets/img/comments_filter_pipeline.jpg)
+- India-Pakistan Conflict / Kashmir Conflict (Pulwama and Balakot Airstrikes) (February 2019): A suicide bombing by a Pakistan-based militant group in Pulwama killed 40 Indian paramilitary personnel, prompting retaliatory Indian airstrikes in Balakot. The incident triggered cross-border clashes, escalating tensions between the nuclear-armed neighbors.
+- Syrian Civil War (Aleppo Offensive (2016)): In Aleppo, Syrian government forces, backed by Russian airstrikes, launched a brutal offensive against rebels, reclaiming the city after months of relentless bombardment.
+- Yemeni Civil War, battle of Hudayah (June - December 2018 ) - The Battle of Hudaydah (June - December 2018) was the largest and most critical clash in the Yemeni Civil War. It involved a massive offensive by the Saudi-led coalition and Yemeni government forces against Houthi rebels to seize control of Hudaydah Port, Yemen’s primary entry point for humanitarian aid and supplies. The battle saw intense urban warfare, heavy airstrikes, and naval blockades, resulting in thousands of casualties on both sides and severe civilian suffering. Fears of a humanitarian disaster due to potential disruptions in food and medical imports drew international condemnation. The fighting ultimately led to a UN-brokered ceasefire under the Stockholm Agreement in December 2018, halting the offensive and averting mass starvation in Yemen.
 
-At this point, we have reduced the size of all the datafiles (except the comments). 
+### Europe:
 
-#### Analysis
+ - Crimea Annexation and Conflict in Eastern Ukraine (2014): Russia’s military annexation of Crimea and subsequent backing of separatist rebels in Ukraine’s Donbas region triggered an armed conflict with Ukrainian forces. The crisis led to thousands of deaths, economic sanctions against Russia, and a prolonged geopolitical standoff.
+- Nagorno-Karabakh Conflicts (Clashes (2016)) - Armenia-Azerbaijan: A brief but intense escalation of hostilities over the disputed Nagorno-Karabakh region, featuring artillery duels, tank battles, and significant casualties on both sides. Despite a ceasefire, tensions between the two countries remain unresolved.
 
-The analysis is decomposed into two sections: 1. How does US News report on different events based on category and location? (i.e. studying the reporting side) 2. How does the public respond to events and specific video formats? 
+## Natural and human-caused environmental disasters
 
-To answer the first question, we look at videos related to each event, getting statistics for: 
+### US :
+- Hurricane Harvey (2017): A Category 4 hurricane that caused catastrophic flooding in Texas, especially in Houston, becoming one of the costliest natural disasters in US history.
+- California Wildfires (2018): Including the Camp Fire, the deadliest and most destructive wildfire in California’s history, destroying entire towns like Paradise and causing widespread evacuation.
+- Hurricane Maria (2017): A powerful Category 5 hurricane that devastated Puerto Rico and nearby Caribbean islands, causing a prolonged humanitarian crisis and leaving much of the island without power for months.
+- Hurricane Michael (2018): A Category 5 hurricane that struck Florida, causing catastrophic damage with intense winds, storm surges, and widespread destruction in the southeastern US. It was one of the strongest hurricanes ever to hit the US mainland.
 
-    - video duration
-    - type of video (live footage/analysis)
-    - formatting of the title with capitalization 
-    - subscribers at time of upload
-    - frequency of video uploads at the time upload
+### Asia :
+- Sulawesi Earthquake and Tsunami (2018): A 7.5 magnitude earthquake triggered a devastating tsunami in Indonesia, killing thousands and flattening entire communities.
+- Southeast Asian Haze (2015): A massive transboundary haze caused by illegal agricultural fires in Indonesia, affecting millions across Southeast Asia with hazardous air quality.
+- Nepal Earthquake (2015): A 7.8 magnitude earthquake struck Nepal, causing widespread destruction, killing thousands, and severely damaging historical sites, including those in Kathmandu.
+- Bangladesh Cyclone Mora (2017): A strong cyclone that impacted densely populated coastal areas and refugee camps, displacing hundreds of thousands of people.
+- India Floods (2018): Severe monsoon flooding in Kerala, considered the worst in a century, displacing over a million people and causing massive economic and environmental damage.
 
-The type of video can be determined by filtering based on certain keywords in the title and description, by searching for specific keywords. We notices that the vast majority of videos that are about live footage include the terms "live" or "live footage" in either the title or description, so that allows us to seperate them from the rest.
+### Europe :
+- Heatwaves (2019): Record-breaking heatwaves across Europe caused severe droughts, wildfires, and thousands of heat-related deaths, with temperatures exceeding 46°C in France.
+- Portugal Wildfires (2017): Massive wildfires in central Portugal, particularly in Pedrógão Grande, causing hundreds of deaths and devastating large areas of forest and rural communities.
+- European Floods (2014): Widespread flooding in the Balkans, including Bosnia, Serbia, and Croatia, caused by heavy rains and river overflows, displacing thousands and causing significant infrastructure damage.
+- Greek Wildfires (2018): Devastating wildfires near Athens, particularly in the town of Mati, causing significant loss of life, displacing thousands, and becoming one of Europe’s deadliest wildfire events in modern history.
+- Italy Earthquakes (2016): A series of powerful earthquakes hit central Italy, particularly in Amatrice, causing hundreds of deaths and massive destruction, including damage to historical towns and cultural landmarks.
 
-With the statistics we can analyze how different events are reported and compare between events based on the locations and event category. Furthermore, by studying the evolution of the upload frequency for different events, we can visualize attention fatigue and determine what affects it and how it changes from event to event by estimating the rate of decrease of the upload frequency.
+The choice of events was rigorous, as we only wanted events that had a clear starting date that accurately represents the response to breaking news and that we can use for filtration. We also looked for the most popular and impactful events for each category, i.e. the ones that garnered the most reporting, to maximize the datapoints and best represent the event types.
 
-To answer the second question, we look at data relating to the public response to videos which are: 
-
-    - views
-    - number of comments
-    - number of replies to comments
-    - ratio of like/dislike
-
-We would like to find correlations between the statistic of the first question and those of the public's response (using t and f tests to see the significance of correlation), potentially finding meaningful patterns. The goal of this is provide tips for useful features that news companies and NGO's can use to better engage users. 
-
-Based on the metrics of the public's response we could classify the reaction into two main categories: relatively high view count and low comments/replies to comments, and average views with high comments/replies to comments. The first type would reflect virality and high reach of the video, while the second indicates that the video prompts strong user ungagement, encouraging discussions within the public. We could thereafter determine what format of videos result in high virality vs discussions, and news channels could adapt their videos according to the desired outcome. Like/dislike ratio could also be used to try determining how to potentially minimize division among the public (indicated by a ratio close to 1). 
-
-## Proposed timeline and organization within the team
-#### Week 1 (26.10.-01.11.):
-- Find out how to treat big dataframes (🐋Lisa)
-- Filter channels by category (🐋Lisa)
-- Find three events in each category: geopolitical, natural, economical, political (🦖Leonie🦝Samuel🦔Jad🐦Jeffrey)
-
-#### Week 2 (02.11.-8.11.):
-- Filter channels by activity (🐋Lisa)
-- Filter non-english channels using LLM (🐦Jeffrey)
-- Prepare a list of keywords that would isolate specific events and filter out the related videos by searching in title and description (🦔Jad)
-- Prepare statistical test pipeline (🦝Samuel)
-- Get country information from channels using Youtube Data API (🐦Jeffrey)
-
-#### Week 3 (9.11.-15.11.):
-- ReadMe.md file (🐋Lisa)
-- Analysis of video titles (🦖Leonie)
-- Study of the upload frequency evolution for each event(🦔Jad)
-- Filter the comments dataset on AWS (🐦Jeffrey)
-- Correlation matrix over different values (🦝Samuel)
-
-#### Week 4 (30.11.-06.12.):
-- analysis on comments
-
-#### Week 5 (7.11.-13.12.):
-- create interactive plots
-- start html website
-
-#### Week 6 (14.12.-20.12.):
-- conclusion of analysis
-
-<iframe src="assets/plots/keyword_toggle.html" width="800" height="400" style="border:none;"></iframe>
-
-
-## Questions for TAs
-- When we try to compare between different event types, the actual number of events per category which is feasible to analyse, is very small (three in our case). We are afraid that due to this small number, our analysis will be very sensitive to the events we chose and a general conclusion will likely be very biased. Would it be better if we only focus on one type of event (i.e. geopolitical) and analyse more events?
+To flag the related videos for each event, we looked for keywords in the titles and description of each video for any potential match. We define keywords and combinations of keywords that, if raise a match in either the title or description of the video, flag the video as relavant. For every event we define a list of lists, where each sublist has one or more keywords as strings. For a video to be flagged, at least one sublist has to match all its terms to the title or description. Finally we filter the results using upload time, where we only consider the time frame during which the specific event was occurring and still relevant.
