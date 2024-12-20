@@ -144,6 +144,12 @@ These metrics were taken purely from the YouNiverse dataset and are conserning t
 
 
 These metrics are all correlated to views because in order to interact with the video one has to click on it which qualifies as a view. Therefore in order to have more meaningfull data these metrics were normalized by the views of the video.
+
+
+Having defined our video features and response metrics, we were now ready to relate them together. Our first simple approach was to calculate the pearsonr correlation coefficient between these variables. The PearsonR coefficient is an indicator of linear correlation, and therefore can reveal such linear relationships between our variables. We also computed the p-value corresponding to the null hypothesis that a random sample would give an equally strong correlation.
+
+Next, we ploted the correlation between the features and metrics in order to find a way to link them together. We grouped them differently in order to observe the difference between events, event types, regions. The plots below show the results of the correlations along with p-values to indicate how significant the results are (note that for entries where the variance of the sample was zero, we mapped the correlation coefficient to zero, and the p-value to 1).
+
 [insert correlation plot form samuel here]
 <iframe src="assets\plots\correlation_matrix_event_types.html" width="100%" height="600" style="border:none;"></iframe>
 <iframe src="assets\plots\correlation_matrix_events.html" width="100%" height="600" style="border:none;"></iframe>
