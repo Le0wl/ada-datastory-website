@@ -50,7 +50,7 @@ author:
 ###############################################
 
 navbar-links:
-  more about our Events: "oldReadMe"
+  more about our Events: "events"
   Sources:
     - ADA | CS-401: "https://epfl-ada.github.io/teaching/fall2024/cs401/"
     - YouNiverse dataset: "https://github.com/epfl-dlab/YouNiverse"
