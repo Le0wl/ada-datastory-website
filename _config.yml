@@ -50,7 +50,6 @@ author:
 ###############################################
 
 navbar-links:
-  old Notebook: "oldNotebook"
   more about our Events: "oldReadMe"
   Sources:
     - ADA | CS-401: "https://epfl-ada.github.io/teaching/fall2024/cs401/"
