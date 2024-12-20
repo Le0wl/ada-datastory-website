@@ -53,18 +53,17 @@ Explain what characterizes a video, i.e. the variables the news channel can infl
 
 - video duration
 - type of video (live footage/analysis)
+- frequency of video uploads concerning the event at time of upload
 - capitalization of title
 - appearance of specific keywords (breaking news…)
-- frequency of video uploads concerning the event at time of upload
 - Subjectivity score</span>
 
-The video duration was taken directly from the YouNiverse dataset. The type of video trying to identify live footage as opposed to studio recording, the distinction is based on weither the key word "footage" appears in the title. This keyword had the best performance compared to "live" that tended to also flag live streams and the verb live (as in I live here). 
-The caplitalization of the title is the ratio of upper case to lower case letters in the title. The recurring keywords are once again based on the titles but it is more to see what kinds of words appear. The frequeny of video video uploads describles the average dayly upload in the 2 weeks surrounding the upload of that specific video. 
-
-The subjectivity score has been obtained using OpenAI's API using the following promt:
+The video duration was taken directly from the YouNiverse dataset. The type of video trying to identify live footage as opposed to studio recording, the distinction is based on weither the key word "footage" appears in the title. This keyword had the best performance compared to "live" that tended to also flag live streams and the verb live (as in I live here). The frequeny of video video uploads describles the average dayly upload in the 2 weeks surrounding the upload of that specific video. 
+The video title are offer us a few metrics. The caplitalization of the title is the ratio of upper case to lower case letters in the title, then we look at recurring keywords in the titles to see if they affect response and for a more quantitative measure there is a subjectivity score that has been obtained using OpenAI's API using the following promt:
 
 "your task is to evaluate the subjectivity of news video titles and give each one a score from 0 neutral to 1 highly subjective. The topic does not matter but the phrasing of the reporting. as an example "Switzerland obliterates all other countries in quality of life" would be more subjective than "Switzerland exceeds other countries in quality of life". only return the score"
 
+To look at the titles for the different events the most common words and experesstions are ploted in the wordclouds below:
 <iframe src="assets/plots/wordclouds.html" width="100%" height="600" style="border:none;"></iframe>
 
 <span style="color: red;">Plot with statistics about each of those metrics where you can choose whether you want to group by region or event (or both?).</span>
